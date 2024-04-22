@@ -1,0 +1,151 @@
+[gd_scene load_steps=7 format=3 uid="uid://bv8ix60jae3hy"]
+
+[ext_resource type="Script" path="res://Scripts/BallSpawner.cs" id="1_ankmv"]
+[ext_resource type="Texture2D" uid="uid://dk6xqxbgjpcwo" path="res://Squar.png" id="1_wjbrx"]
+[ext_resource type="PackedScene" uid="uid://dwjj1eluktxxb" path="res://Ball.tscn" id="2_qsuy1"]
+[ext_resource type="PackedScene" uid="uid://co4nu5uatg15n" path="res://fps.tscn" id="2_wgdde"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5yd7l"]
+size = Vector2(4992, 128)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_md4rx"]
+size = Vector2(128, 4296)
+
+[node name="Container" type="Node2D" node_paths=PackedStringArray("spawnPoints", "ballCounter")]
+script = ExtResource("1_ankmv")
+ball = ExtResource("2_qsuy1")
+spawnPoints = [NodePath("Node/Pos11"), NodePath("Node/Pos12"), NodePath("Node/Pos13"), NodePath("Node/Pos14"), NodePath("Node/Pos15"), NodePath("Node/Pos16"), NodePath("Node/Pos17"), NodePath("Node/Pos18"), NodePath("Node/Pos19"), NodePath("Node/Pos20"), NodePath("Node/Pos21"), NodePath("Node/Pos22"), NodePath("Node/Pos23")]
+ballCounter = NodePath("FPS2/Numbers")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+modulate = Color(0.611765, 0.113725, 0.113725, 1)
+position = Vector2(-4832, 1936)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(5472, -48)
+shape = SubResource("RectangleShape2D_5yd7l")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(5472, -48.0001)
+scale = Vector2(39, 1)
+texture = ExtResource("1_wjbrx")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+modulate = Color(0.611765, 0.113725, 0.113725, 1)
+position = Vector2(-1960, 3328)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(40, -2132)
+shape = SubResource("RectangleShape2D_md4rx")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D2"]
+position = Vector2(39.9999, -2132)
+scale = Vector2(1, 33.5625)
+texture = ExtResource("1_wjbrx")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="."]
+modulate = Color(0.611765, 0.113725, 0.113725, 1)
+position = Vector2(3160, 3328)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4"]
+position = Vector2(40, -2136)
+shape = SubResource("RectangleShape2D_md4rx")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D4"]
+position = Vector2(39.9999, -2136)
+scale = Vector2(1, 33.625)
+texture = ExtResource("1_wjbrx")
+
+[node name="FPS" parent="." instance=ExtResource("2_wgdde")]
+
+[node name="Sprite2D" parent="FPS" index="0"]
+position = Vector2(2624, -1184)
+scale = Vector2(10, 1.5)
+
+[node name="Numbers" parent="FPS" index="1"]
+offset_left = 2504.0
+offset_top = -1296.0
+offset_right = 2592.0
+offset_bottom = -1272.0
+scale = Vector2(10, 10)
+
+[node name="RichTextLabel2" parent="FPS" index="2"]
+offset_left = 2008.0
+offset_top = -1312.0
+offset_right = 2096.0
+offset_bottom = -1288.0
+scale = Vector2(10, 10)
+
+[node name="FPS2" type="Node" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="FPS2"]
+z_index = 1
+position = Vector2(-1344, -1184)
+scale = Vector2(10, 1.5)
+texture = ExtResource("1_wjbrx")
+
+[node name="Numbers" type="RichTextLabel" parent="FPS2"]
+unique_name_in_owner = true
+modulate = Color(0.164706, 0.164706, 0.164706, 1)
+z_index = 2
+offset_left = -1464.0
+offset_top = -1296.0
+offset_right = -1376.0
+offset_bottom = -1272.0
+scale = Vector2(10, 10)
+text = "123"
+fit_content = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="FPS2"]
+modulate = Color(0.164706, 0.164706, 0.164706, 1)
+z_index = 2
+offset_left = -1960.0
+offset_top = -1312.0
+offset_right = -1872.0
+offset_bottom = -1288.0
+scale = Vector2(10, 10)
+text = "Balls: "
+fit_content = true
+
+[node name="Node" type="Node" parent="."]
+
+[node name="Pos11" type="Sprite2D" parent="Node"]
+position = Vector2(-1224, -1024)
+
+[node name="Pos18" type="Sprite2D" parent="Node"]
+position = Vector2(-896, -1024)
+
+[node name="Pos12" type="Sprite2D" parent="Node"]
+position = Vector2(-584, -1024)
+
+[node name="Pos19" type="Sprite2D" parent="Node"]
+position = Vector2(-256, -1024)
+
+[node name="Pos13" type="Sprite2D" parent="Node"]
+position = Vector2(56, -1024)
+
+[node name="Pos20" type="Sprite2D" parent="Node"]
+position = Vector2(384, -1024)
+
+[node name="Pos14" type="Sprite2D" parent="Node"]
+position = Vector2(696, -1024)
+
+[node name="Pos21" type="Sprite2D" parent="Node"]
+position = Vector2(1024, -1024)
+
+[node name="Pos15" type="Sprite2D" parent="Node"]
+position = Vector2(1336, -1024)
+
+[node name="Pos22" type="Sprite2D" parent="Node"]
+position = Vector2(1664, -1024)
+
+[node name="Pos16" type="Sprite2D" parent="Node"]
+position = Vector2(1976, -1024)
+
+[node name="Pos23" type="Sprite2D" parent="Node"]
+position = Vector2(2304, -1024)
+
+[node name="Pos17" type="Sprite2D" parent="Node"]
+position = Vector2(2616, -1024)
+
+[editable path="FPS"]

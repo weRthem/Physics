@@ -1,0 +1,14 @@
+Node
+Sprite2D
+Node2D
+CollisionShape2D
+StaticBody2D
+Camera2D
+RichTextLabel
+TextEdit
+CharacterBody2D
+RigidBody2D
+MarginContainer
+Control
+VBoxContainer
+CanvasGroup

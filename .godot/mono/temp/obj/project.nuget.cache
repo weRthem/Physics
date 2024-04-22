@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "NdoibeWXZza6uskCJNyGsG3d166/CnPCfir8bMqJ5OlBBgQ8yP5YJyooQFb7YgumXPnIS133YosYm7POoiMLeQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Patrick\\Documents\\Godot_Projects\\Physics\\Physics.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Patrick\\.nuget\\packages\\godot.sourcegenerators\\4.2.0\\godot.sourcegenerators.4.2.0.nupkg.sha512",
+    "C:\\Users\\Patrick\\.nuget\\packages\\godotsharp\\4.2.0\\godotsharp.4.2.0.nupkg.sha512",
+    "C:\\Users\\Patrick\\.nuget\\packages\\godotsharpeditor\\4.2.0\\godotsharpeditor.4.2.0.nupkg.sha512",
+    "C:\\Users\\Patrick\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.11\\microsoft.netcore.app.ref.6.0.11.nupkg.sha512",
+    "C:\\Users\\Patrick\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.11\\microsoft.windowsdesktop.app.ref.6.0.11.nupkg.sha512",
+    "C:\\Users\\Patrick\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.11\\microsoft.aspnetcore.app.ref.6.0.11.nupkg.sha512"
+  ],
+  "logs": []
+}

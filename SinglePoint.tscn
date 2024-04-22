@@ -1,0 +1,89 @@
+[gd_scene load_steps=7 format=3 uid="uid://bhm8fu4kpbpb"]
+
+[ext_resource type="PackedScene" uid="uid://co4nu5uatg15n" path="res://fps.tscn" id="1_1latl"]
+[ext_resource type="Script" path="res://SinglePoint.cs" id="1_texkp"]
+[ext_resource type="PackedScene" uid="uid://dwjj1eluktxxb" path="res://Ball.tscn" id="2_4d5km"]
+[ext_resource type="Texture2D" uid="uid://dk6xqxbgjpcwo" path="res://Squar.png" id="4_hrl7h"]
+[ext_resource type="Texture2D" uid="uid://1brelkeca4cd" path="res://icon.svg" id="4_ofx34"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l063d"]
+size = Vector2(48, 48)
+
+[node name="Node2D" type="Node2D" node_paths=PackedStringArray("ballCounter", "canBallsSleepText")]
+position = Vector2(576, 320)
+script = ExtResource("1_texkp")
+ballScene = ExtResource("2_4d5km")
+numberOfBalls = 250
+ballCounter = NodePath("BallCount/Numbers")
+canBallsSleepText = NodePath("BallCount2/Bool")
+
+[node name="FPS" parent="." instance=ExtResource("1_1latl")]
+
+[node name="BallCount" type="Node" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="BallCount"]
+z_index = 1
+position = Vector2(64, 16)
+scale = Vector2(1, 0.25)
+texture = ExtResource("4_hrl7h")
+
+[node name="Numbers" type="RichTextLabel" parent="BallCount"]
+unique_name_in_owner = true
+modulate = Color(0.164706, 0.164706, 0.164706, 1)
+z_index = 2
+offset_left = 48.0
+offset_top = 8.0
+offset_right = 136.0
+offset_bottom = 32.0
+text = "0
+"
+fit_content = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="BallCount"]
+modulate = Color(0.164706, 0.164706, 0.164706, 1)
+z_index = 2
+offset_top = 8.0
+offset_right = 88.0
+offset_bottom = 32.0
+text = "Balls: "
+fit_content = true
+
+[node name="BallCount2" type="Node" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="BallCount2"]
+z_index = 1
+position = Vector2(592, 16)
+scale = Vector2(1, 0.25)
+texture = ExtResource("4_hrl7h")
+
+[node name="Bool" type="RichTextLabel" parent="BallCount2"]
+unique_name_in_owner = true
+modulate = Color(0.164706, 0.164706, 0.164706, 1)
+z_index = 2
+offset_left = 608.0
+offset_top = 8.0
+offset_right = 696.0
+offset_bottom = 32.0
+text = "True
+"
+fit_content = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="BallCount2"]
+modulate = Color(0.164706, 0.164706, 0.164706, 1)
+z_index = 2
+offset_left = 528.0
+offset_top = 8.0
+offset_right = 616.0
+offset_bottom = 32.0
+text = "Can Sleep:"
+fit_content = true
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_l063d")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(0, -1.00136e-05)
+scale = Vector2(0.375, 0.375)
+texture = ExtResource("4_ofx34")

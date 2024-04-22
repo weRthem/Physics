@@ -1,0 +1,34 @@
+[gd_scene load_steps=3 format=3 uid="uid://co4nu5uatg15n"]
+
+[ext_resource type="Script" path="res://Scripts/FPS.cs" id="1_cde2u"]
+[ext_resource type="Texture2D" uid="uid://dk6xqxbgjpcwo" path="res://Squar.png" id="1_yf4ka"]
+
+[node name="FPS" type="Node"]
+script = ExtResource("1_cde2u")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(1088, 16)
+scale = Vector2(1, 0.25)
+texture = ExtResource("1_yf4ka")
+
+[node name="Numbers" type="RichTextLabel" parent="."]
+unique_name_in_owner = true
+modulate = Color(0.164706, 0.164706, 0.164706, 1)
+z_index = 2
+offset_left = 1072.0
+offset_top = 8.0
+offset_right = 1160.0
+offset_bottom = 32.0
+text = "123"
+fit_content = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+modulate = Color(0.164706, 0.164706, 0.164706, 1)
+z_index = 2
+offset_left = 1024.0
+offset_top = 8.0
+offset_right = 1112.0
+offset_bottom = 32.0
+text = "FPS: "
+fit_content = true

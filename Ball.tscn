@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://dwjj1eluktxxb"]
+
+[ext_resource type="Texture2D" uid="uid://bgu5eeb7vp21e" path="res://Ball.png" id="1_pbcq3"]
+[ext_resource type="Script" path="res://Scripts/Color.cs" id="2_4t2a7"]
+[ext_resource type="Texture2D" uid="uid://dj5jx52obouts" path="res://Face.png" id="3_aaytb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6djdy"]
+radius = 32.0
+
+[node name="RigidBody2D" type="RigidBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_6djdy")
+
+[node name="Color" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_pbcq3")
+script = ExtResource("2_4t2a7")
+
+[node name="Face" type="Sprite2D" parent="."]
+position = Vector2(-9.53674e-07, 1.19209e-06)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_aaytb")

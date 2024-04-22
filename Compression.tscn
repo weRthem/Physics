@@ -1,0 +1,365 @@
+[gd_scene load_steps=7 format=3 uid="uid://csuls4brvx1j8"]
+
+[ext_resource type="PackedScene" uid="uid://dwjj1eluktxxb" path="res://Ball.tscn" id="1_2lv20"]
+[ext_resource type="Texture2D" uid="uid://dk6xqxbgjpcwo" path="res://Squar.png" id="2_2auo3"]
+[ext_resource type="PackedScene" uid="uid://co4nu5uatg15n" path="res://fps.tscn" id="2_5qclb"]
+[ext_resource type="Script" path="res://Walls.cs" id="3_3ywj6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sj7vc"]
+size = Vector2(1152, 31.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dqmco"]
+size = Vector2(160, 512)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TextBox" type="Node" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="TextBox"]
+z_index = 1
+position = Vector2(64, 16)
+scale = Vector2(1, 0.25)
+texture = ExtResource("2_2auo3")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextBox"]
+modulate = Color(0.164706, 0.164706, 0.164706, 1)
+z_index = 2
+offset_left = 48.0
+offset_top = 8.0
+offset_right = 136.0
+offset_bottom = 32.0
+text = "123"
+fit_content = true
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="TextBox"]
+modulate = Color(0.164706, 0.164706, 0.164706, 1)
+z_index = 2
+offset_top = 8.0
+offset_right = 88.0
+offset_bottom = 32.0
+text = "Force: "
+fit_content = true
+
+[node name="FPS" parent="." instance=ExtResource("2_5qclb")]
+
+[node name="Top" type="StaticBody2D" parent="."]
+modulate = Color(0.611765, 0.113725, 0.113725, 1)
+position = Vector2(16, 48)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Top"]
+position = Vector2(560, -0.25)
+shape = SubResource("RectangleShape2D_sj7vc")
+
+[node name="Sprite2D" type="Sprite2D" parent="Top"]
+position = Vector2(560, 0)
+scale = Vector2(9, 0.25)
+texture = ExtResource("2_2auo3")
+
+[node name="Bottom" type="StaticBody2D" parent="."]
+modulate = Color(0.611765, 0.113725, 0.113725, 1)
+position = Vector2(16, 592)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bottom"]
+position = Vector2(560, -0.125)
+shape = SubResource("RectangleShape2D_sj7vc")
+
+[node name="Sprite2D" type="Sprite2D" parent="Bottom"]
+position = Vector2(560, 0)
+scale = Vector2(9, 0.25)
+texture = ExtResource("2_2auo3")
+
+[node name="Walls" type="Node" parent="." node_paths=PackedStringArray("wall1", "wall2", "text")]
+script = ExtResource("3_3ywj6")
+wall1 = NodePath("Wall")
+wall2 = NodePath("Wall2")
+text = NodePath("../TextBox/RichTextLabel")
+
+[node name="Wall" type="RigidBody2D" parent="Walls"]
+position = Vector2(16, 320)
+mass = 5.0
+gravity_scale = 0.0
+can_sleep = false
+lock_rotation = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall"]
+position = Vector2(-64, -3.05176e-05)
+shape = SubResource("RectangleShape2D_dqmco")
+
+[node name="Sprite2D" type="Sprite2D" parent="Walls/Wall/CollisionShape2D"]
+position = Vector2(64, -3.05176e-05)
+scale = Vector2(0.25, 4)
+texture = ExtResource("2_2auo3")
+
+[node name="Wall2" type="RigidBody2D" parent="Walls"]
+position = Vector2(1136, 320)
+mass = 5.0
+gravity_scale = 0.0
+can_sleep = false
+lock_rotation = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/Wall2"]
+position = Vector2(64, -3.05176e-05)
+shape = SubResource("RectangleShape2D_dqmco")
+
+[node name="Sprite2D" type="Sprite2D" parent="Walls/Wall2/CollisionShape2D"]
+position = Vector2(-64, -3.05176e-05)
+scale = Vector2(0.25, 4)
+texture = ExtResource("2_2auo3")
+
+[node name="Balls" type="Node" parent="."]
+
+[node name="RigidBody2D" parent="Balls" instance=ExtResource("1_2lv20")]
+position = Vector2(544, 224)
+mass = 0.1
+
+[node name="RigidBody2D2" parent="Balls" instance=ExtResource("1_2lv20")]
+position = Vector2(352, 480)
+mass = 0.1
+
+[node name="RigidBody2D3" parent="Balls" instance=ExtResource("1_2lv20")]
+position = Vector2(352, 544)
+mass = 0.1
+
+[node name="RigidBody2D4" parent="Balls" instance=ExtResource("1_2lv20")]
+position = Vector2(800, 288)
+mass = 0.1
+
+[node name="RigidBody2D5" parent="Balls" instance=ExtResource("1_2lv20")]
+position = Vector2(800, 480)
+mass = 0.1
+
+[node name="RigidBody2D6" parent="Balls" instance=ExtResource("1_2lv20")]
+position = Vector2(736, 480)
+mass = 0.1
+
+[node name="RigidBody2D7" parent="Balls" instance=ExtResource("1_2lv20")]
+position = Vector2(736, 288)
+mass = 0.1
+
+[node name="RigidBody2D8" parent="Balls" instance=ExtResource("1_2lv20")]
+position = Vector2(800, 224)
+mass = 0.1
+
+[node name="RigidBody2D9" parent="Balls" instance=ExtResource("1_2lv20")]
+position = Vector2(736, 224)
+mass = 0.1
+
+[node name="RigidBody2D10" parent="Balls" instance=ExtResource("1_2lv20")]
+position = Vector2(672, 224)
+mass = 0.1
+
+[node name="RigidBody2D11" parent="Balls" instance=ExtResource("1_2lv20")]
+position = Vector2(608, 224)
+mass = 0.1
+
+[node name="RigidBody2D12" parent="Balls" instance=ExtResource("1_2lv20")]
+position = Vector2(480, 224)
+mass = 0.1
+
+[node name="RigidBody2D13" parent="Balls" instance=ExtResource("1_2lv20")]
+position = Vector2(416, 224)
+mass = 0.1
+
+[node name="RigidBody2D14" parent="Balls" instance=ExtResource("1_2lv20")]
+position = Vector2(352, 224)
+mass = 0.1
+
+[node name="RigidBody2D15" parent="Balls" instance=ExtResource("1_2lv20")]
+position = Vector2(480, 480)
+mass = 0.1
+
+[node name="RigidBody2D16" parent="Balls" instance=ExtResource("1_2lv20")]
+position = Vector2(416, 480)
+mass = 0.1
+
+[node name="RigidBody2D17" parent="Balls" instance=ExtResource("1_2lv20")]
+position = Vector2(416, 288)
+mass = 0.1
+
+[node name="RigidBody2D18" parent="Balls" instance=ExtResource("1_2lv20")]
+position = Vector2(352, 416)
+mass = 0.1
+
+[node name="RigidBody2D19" parent="Balls" instance=ExtResource("1_2lv20")]
+position = Vector2(800, 352)
+mass = 0.1
+
+[node name="RigidBody2D20" parent="Balls" instance=ExtResource("1_2lv20")]
+position = Vector2(800, 544)
+mass = 0.1
+
+[node name="RigidBody2D21" parent="Balls" instance=ExtResource("1_2lv20")]
+position = Vector2(736, 416)
+mass = 0.1
+
+[node name="RigidBody2D22" parent="Balls" instance=ExtResource("1_2lv20")]
+position = Vector2(672, 544)
+mass = 0.1
+
+[node name="RigidBody2D23" parent="Balls" instance=ExtResource("1_2lv20")]
+position = Vector2(800, 160)
+mass = 0.1
+
+[node name="RigidBody2D24" parent="Balls" instance=ExtResource("1_2lv20")]
+position = Vector2(736, 160)
+mass = 0.1
+
+[node name="RigidBody2D25" parent="Balls" instance=ExtResource("1_2lv20")]
+position = Vector2(672, 160)
+mass = 0.1
+
+[node name="RigidBody2D26" parent="Balls" instance=ExtResource("1_2lv20")]
+position = Vector2(608, 160)
+mass = 0.1
+
+[node name="RigidBody2D27" parent="Balls" instance=ExtResource("1_2lv20")]
+position = Vector2(544, 160)
+mass = 0.1
+
+[node name="RigidBody2D28" parent="Balls" instance=ExtResource("1_2lv20")]
+position = Vector2(480, 160)
+mass = 0.1
+
+[node name="RigidBody2D29" parent="Balls" instance=ExtResource("1_2lv20")]
+position = Vector2(416, 160)
+mass = 0.1
+
+[node name="RigidBody2D30" parent="Balls" instance=ExtResource("1_2lv20")]
+position = Vector2(352, 160)
+mass = 0.1
+
+[node name="RigidBody2D31" parent="Balls" instance=ExtResource("1_2lv20")]
+position = Vector2(480, 416)
+mass = 0.1
+
+[node name="RigidBody2D32" parent="Balls" instance=ExtResource("1_2lv20")]
+position = Vector2(416, 544)
+mass = 0.1
+
+[node name="RigidBody2D33" parent="Balls" instance=ExtResource("1_2lv20")]
+position = Vector2(416, 352)
+mass = 0.1
+
+[node name="RigidBody2D34" parent="Balls" instance=ExtResource("1_2lv20")]
+position = Vector2(352, 352)
+mass = 0.1
+
+[node name="RigidBody2D35" parent="Balls" instance=ExtResource("1_2lv20")]
+position = Vector2(800, 416)
+mass = 0.1
+
+[node name="RigidBody2D36" parent="Balls" instance=ExtResource("1_2lv20")]
+position = Vector2(736, 544)
+mass = 0.1
+
+[node name="RigidBody2D37" parent="Balls" instance=ExtResource("1_2lv20")]
+position = Vector2(736, 352)
+mass = 0.1
+
+[node name="RigidBody2D38" parent="Balls" instance=ExtResource("1_2lv20")]
+position = Vector2(672, 480)
+mass = 0.1
+
+[node name="RigidBody2D39" parent="Balls" instance=ExtResource("1_2lv20")]
+position = Vector2(800, 96)
+mass = 0.1
+
+[node name="RigidBody2D40" parent="Balls" instance=ExtResource("1_2lv20")]
+position = Vector2(736, 96)
+mass = 0.1
+
+[node name="RigidBody2D41" parent="Balls" instance=ExtResource("1_2lv20")]
+position = Vector2(672, 96)
+mass = 0.1
+
+[node name="RigidBody2D42" parent="Balls" instance=ExtResource("1_2lv20")]
+position = Vector2(608, 96)
+mass = 0.1
+
+[node name="RigidBody2D43" parent="Balls" instance=ExtResource("1_2lv20")]
+position = Vector2(544, 96)
+mass = 0.1
+
+[node name="RigidBody2D44" parent="Balls" instance=ExtResource("1_2lv20")]
+position = Vector2(480, 96)
+mass = 0.1
+
+[node name="RigidBody2D45" parent="Balls" instance=ExtResource("1_2lv20")]
+position = Vector2(416, 96)
+mass = 0.1
+
+[node name="RigidBody2D46" parent="Balls" instance=ExtResource("1_2lv20")]
+position = Vector2(352, 96)
+mass = 0.1
+
+[node name="RigidBody2D47" parent="Balls" instance=ExtResource("1_2lv20")]
+position = Vector2(480, 352)
+mass = 0.1
+
+[node name="RigidBody2D48" parent="Balls" instance=ExtResource("1_2lv20")]
+position = Vector2(480, 544)
+mass = 0.1
+
+[node name="RigidBody2D49" parent="Balls" instance=ExtResource("1_2lv20")]
+position = Vector2(416, 416)
+mass = 0.1
+
+[node name="RigidBody2D50" parent="Balls" instance=ExtResource("1_2lv20")]
+position = Vector2(352, 288)
+mass = 0.1
+
+[node name="RigidBody2D51" parent="Balls" instance=ExtResource("1_2lv20")]
+position = Vector2(480, 288)
+mass = 0.1
+
+[node name="RigidBody2D52" parent="Balls" instance=ExtResource("1_2lv20")]
+position = Vector2(544, 288)
+mass = 0.1
+
+[node name="RigidBody2D53" parent="Balls" instance=ExtResource("1_2lv20")]
+position = Vector2(608, 288)
+mass = 0.1
+
+[node name="RigidBody2D54" parent="Balls" instance=ExtResource("1_2lv20")]
+position = Vector2(672, 288)
+mass = 0.1
+
+[node name="RigidBody2D55" parent="Balls" instance=ExtResource("1_2lv20")]
+position = Vector2(672, 352)
+mass = 0.1
+
+[node name="RigidBody2D56" parent="Balls" instance=ExtResource("1_2lv20")]
+position = Vector2(672, 416)
+mass = 0.1
+
+[node name="RigidBody2D57" parent="Balls" instance=ExtResource("1_2lv20")]
+position = Vector2(608, 352)
+mass = 0.1
+
+[node name="RigidBody2D58" parent="Balls" instance=ExtResource("1_2lv20")]
+position = Vector2(544, 352)
+mass = 0.1
+
+[node name="RigidBody2D59" parent="Balls" instance=ExtResource("1_2lv20")]
+position = Vector2(544, 416)
+mass = 0.1
+
+[node name="RigidBody2D60" parent="Balls" instance=ExtResource("1_2lv20")]
+position = Vector2(544, 480)
+mass = 0.1
+
+[node name="RigidBody2D61" parent="Balls" instance=ExtResource("1_2lv20")]
+position = Vector2(544, 544)
+mass = 0.1
+
+[node name="RigidBody2D62" parent="Balls" instance=ExtResource("1_2lv20")]
+position = Vector2(608, 544)
+mass = 0.1
+
+[node name="RigidBody2D63" parent="Balls" instance=ExtResource("1_2lv20")]
+position = Vector2(608, 480)
+mass = 0.1
+
+[node name="RigidBody2D64" parent="Balls" instance=ExtResource("1_2lv20")]
+position = Vector2(608, 416)
+mass = 0.1

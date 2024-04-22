@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://7ojjdd74pqfo"]
+
+[ext_resource type="Script" path="res://SceneManager.cs" id="1_7d5o8"]
+[ext_resource type="PackedScene" uid="uid://csuls4brvx1j8" path="res://Compression.tscn" id="2_xx8oa"]
+[ext_resource type="PackedScene" uid="uid://bhm8fu4kpbpb" path="res://SinglePoint.tscn" id="3_nmdoh"]
+[ext_resource type="PackedScene" uid="uid://c1bfiv5ahcvx7" path="res://SinglePointConstrained.tscn" id="4_0bqq1"]
+[ext_resource type="PackedScene" uid="uid://bv8ix60jae3hy" path="res://container.tscn" id="4_wh3sb"]
+
+[node name="Level" type="Node2D"]
+
+[node name="MarginContainer" type="MarginContainer" parent="." node_paths=PackedStringArray("rootNode")]
+offset_left = 480.0
+offset_right = 672.0
+offset_bottom = 648.0
+script = ExtResource("1_7d5o8")
+compressionScene = ExtResource("2_xx8oa")
+singlePointScene = ExtResource("3_nmdoh")
+container = ExtResource("4_wh3sb")
+breakout = ExtResource("4_0bqq1")
+rootNode = NodePath("..")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Compression" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Compression"
+
+[node name="Single Point" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Single Point
+"
+
+[node name="Container" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Container"
+
+[node name="Container Breakout" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Container Breakout"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(576, 320)
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Compression" to="MarginContainer" method="LoadCompression"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Single Point" to="MarginContainer" method="LoadSinglePoint"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Container" to="MarginContainer" method="LoadContainer"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Container Breakout" to="MarginContainer" method="LoadContainerBreakout"]

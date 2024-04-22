@@ -1,0 +1,17 @@
+C:\Users\Patrick\Documents\Godot_Projects\Physics\.godot\mono\temp\bin\Debug\Physics.deps.json
+C:\Users\Patrick\Documents\Godot_Projects\Physics\.godot\mono\temp\bin\Debug\Physics.runtimeconfig.json
+C:\Users\Patrick\Documents\Godot_Projects\Physics\.godot\mono\temp\bin\Debug\Physics.dll
+C:\Users\Patrick\Documents\Godot_Projects\Physics\.godot\mono\temp\bin\Debug\Physics.pdb
+C:\Users\Patrick\Documents\Godot_Projects\Physics\.godot\mono\temp\bin\Debug\GodotSharp.dll
+C:\Users\Patrick\Documents\Godot_Projects\Physics\.godot\mono\temp\bin\Debug\GodotSharpEditor.dll
+C:\Users\Patrick\Documents\Godot_Projects\Physics\.godot\mono\temp\obj\Debug\Physics.csproj.AssemblyReference.cache
+C:\Users\Patrick\Documents\Godot_Projects\Physics\.godot\mono\temp\obj\Debug\Physics.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Patrick\Documents\Godot_Projects\Physics\.godot\mono\temp\obj\Debug\Physics.AssemblyInfoInputs.cache
+C:\Users\Patrick\Documents\Godot_Projects\Physics\.godot\mono\temp\obj\Debug\Physics.AssemblyInfo.cs
+C:\Users\Patrick\Documents\Godot_Projects\Physics\.godot\mono\temp\obj\Debug\Physics.csproj.CoreCompileInputs.cache
+C:\Users\Patrick\Documents\Godot_Projects\Physics\.godot\mono\temp\obj\Debug\Physics.csproj.CopyComplete
+C:\Users\Patrick\Documents\Godot_Projects\Physics\.godot\mono\temp\obj\Debug\Physics.dll
+C:\Users\Patrick\Documents\Godot_Projects\Physics\.godot\mono\temp\obj\Debug\refint\Physics.dll
+C:\Users\Patrick\Documents\Godot_Projects\Physics\.godot\mono\temp\obj\Debug\Physics.pdb
+C:\Users\Patrick\Documents\Godot_Projects\Physics\.godot\mono\temp\obj\Debug\Physics.genruntimeconfig.cache
+C:\Users\Patrick\Documents\Godot_Projects\Physics\.godot\mono\temp\obj\Debug\ref\Physics.dll
